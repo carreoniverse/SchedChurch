@@ -15,7 +15,7 @@
 
 ## Group Members
 List your group members here as well as their corresponding designation to your teams. Depending on your professor, the list below may vary:
-- Project Manager - Jillmarie Inocencio
-- Application Engineer (developer) - Abigale Del Rosario, Jonalyn Fe Ebrada
-- Database Engineer - Jerevon Carreon
-- Technical Documentation Writer - Joshua Ganila
+- Project Manager - Jillmarie Inocencio (@jillinc22)
+- Application Engineer (developer) - Abigale Del Rosario (@abgaled), Jonalyn Fe Ebrada (@jonalynfe)
+- Database Engineer - Jerevon Carreon (@carreoniverse)
+- Technical Documentation Writer - Joshua Ganila (@GanilaJoshua)

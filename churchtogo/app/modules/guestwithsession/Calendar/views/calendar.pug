@@ -1,0 +1,438 @@
+extends ../../../../templates/mainwithsession
+
+block content
+ head
+  <link rel="stylesheet" type="text/css" href="/styles/calendar.css">
+  <link rel="stylesheet" type="text/css" href="/styles/guestform.css">
+  <div class="container">
+  <div class="jumbotron">        
+    <div id="background">
+        
+        <div id='container'>
+        <div id='panel'> 
+            <button id="previous" class="buttons-main">&#10094;</button>
+            <div id='top'></div>
+            <button id='next' class="buttons-main">&#10095;</button>   
+        </div>
+            
+            <div id="table-container">
+                
+            <table class="calendar-days">
+                <tr><td>Mo</td><td>Tu</td><td>We</td><td>Th</td><td>Fr</td><td>Sa</td><td>Su</td></tr></table>
+
+            <table class='calendar-table'>  
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            </table></div>
+            
+            <div id="cell-container">
+                <div id="new-event">
+                </div>
+                
+                <div id="events">
+                    <p class="event-title">Events list</p>
+                    <div class="list">
+                        <br><br><br><br><br><br><br>
+                    </div>
+                </div>
+                
+                <div class="errors"></div>
+            </div>
+            
+            <button id="reset" class="buttons-main">Today</button>
+            <button id="back" class="buttons-cell"><i class="material-icons back">cancel</i></button>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="footer">
+        <p> FOLLOW US ON SOCIAL MEDIA </p>
+        <i class="fa fa-facebook fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-twitter fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-instagram fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-youtube fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-pinterest fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-linkedin fa-2x cust" aria-hidden="true"></i>
+        <hr size="20">
+        <f2> https://churchtogo.io </f2>
+    </div>
+
+    script.
+        // Date variables
+
+        var d = new Date();
+        var day = d.getDay();
+        var date = d.getDate();
+        var month = d.getMonth();
+        var year = d.getFullYear();
+        var today = d.getDate();
+
+
+        // Variables with info
+
+        var dayNames = ["Mon", "Tue", "Wen", "Thu", "Fri", "Sat", "Sun"];
+        var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var monthColor = ["rgb(132,123,118)", "rgb(240,84,94)", "rgb(87,98,100)", "rgb(36,96,107)", "rgb(233,85,107)", "rgb(55,139,89)", "rgb(72,91,168)", "rgb(30,32,117)", "rgb(57,63,53)", "rgb(191,104,76)", "rgb(229,52,36)", "rgb(91,137,152)"];
+
+
+        // Add event variables
+
+        var table = document.querySelector(".calendar-table");
+        var info = "";
+        var newEvent = [];
+        var eventNumber = 0;
+        var arrVal = [false, false, false];
+
+
+
+        // Putting dates in table
+
+        function fillTable() {            
+            // Top panel info
+
+            document.querySelector('#top').textContent = monthNames[month] + " " + year;
+            
+            // Variables for loop below 
+            
+            var x = 0; // Days numbers in table
+            var z = 0; // Row switch
+            var y = -1; // Days in week
+            
+            var firstDay = new Date(year, month, 1).getDay() - 1;
+            var daysInMonth = new Date(year, month + 1 , 0).getDate();
+            
+            // Loop which fill all table dates            
+            for (x = 0; x < daysInMonth; x++) {
+        
+                // Add dot mark to the day containing event
+                for (var i = 0; i < newEvent.length; i++){
+                    // Validation
+                    if (newEvent[i].validation === x + " " + month + " " + year) {
+                        // Adding dot
+                        document.querySelector('.calendar-table').rows[z].cells[firstDay - 1].className = " dot";            
+                    }}       
+                
+                // Table row change
+                if (firstDay == 7 && x == today & month == d.getMonth() && year == d.getFullYear() && document.querySelector('.red') == null){
+                    document.querySelector('.calendar-table').rows[z].cells[firstDay-1].className += ' red'; // Today marked as red
+                    nextRow();
+                } 
+                else if (x == today & month == d.getMonth() && year == d.getFullYear() && document.querySelector('.red') == null){
+                    document.querySelector('.calendar-table').rows[z].cells[firstDay-1].className += ' red'; // Today marked as red
+                }
+                else if (firstDay == 7){
+                    nextRow();
+                } 
+                else if (firstDay < 0) {
+                    firstDay = 6;
+                }
+                        
+                document.querySelector('.calendar-table').rows[z].cells[firstDay].textContent = x + 1;
+                firstDay++; 
+            }
+            
+            
+            // Month name color
+            
+            document.querySelector('#top').style.color = monthColor[month];
+            
+            
+            // Next row function
+            
+            function nextRow(){
+                    z++;
+                    firstDay = 0;
+                    y = 2;
+            } 
+            
+            
+            //Hide empty cells
+            
+            for(var z = 0; z < 6; z++){
+                for(var i = 0; i < 42; i++){
+                    if (typeof document.querySelector('.calendar-table').rows[z].cells[i] == 'undefined') {
+                        break;
+                    }            
+                    else if (document.querySelector('.calendar-table').rows[z].cells[i].innerHTML == ""){
+                        document.querySelector('.calendar-table').rows[z].cells[i].style.visibility = "hidden";
+                    }
+                    else {
+                        document.querySelector('.calendar-table').rows[z].cells[i].style.visibility = "visible";
+                    }
+                }
+            }
+        };
+
+        fillTable();
+
+
+        // Clear table function
+
+        function clearTable() {
+            var x = 0; // All of table cells
+            var z = 0; // Rows
+            var y = 0; // Cells
+            for (x = 0; x < 42; x++) {
+                document.querySelector('.calendar-table').rows[z].cells[y].textContent = "";
+                y++;
+                
+                if (y >= 7) {
+                    z++;
+                    y=0
+                }
+            }
+            
+            //Checks if today marker exist and remove it
+            if (document.querySelector('.red') != null) {
+                document.querySelector('.red').classList.remove("red");
+            }
+            
+            //Checks if event marker exist and remove it
+            if (document.querySelector('.dot') != null) {
+                for (var i = 1; i <= newEvent.length; i++) {
+                    if (document.querySelector('.dot') != null) {
+                        document.querySelector('.dot').classList.remove("dot");
+                    }
+                }
+            }
+        };
+
+
+        // Next button 
+
+        document.querySelector('#next').addEventListener('click', function(){
+
+            if (month >= 11) {
+                year++;
+                month = -1;
+            }
+            clearTable();
+            month++;
+            fillTable();  
+        });
+
+
+        // Prev button 
+
+        document.querySelector('#previous').addEventListener('click', function() {
+
+            if (month <= 0) {
+                year--;
+                month = 12;
+            }   
+            clearTable();
+            month--;
+            fillTable();
+        });
+
+
+        // Reset button
+
+        document.querySelector('#reset').addEventListener('click', function() {
+
+            day = d.getDay();
+            date = d.getDate();
+            month = d.getMonth();
+            year = d.getFullYear();
+            
+            clearTable();
+            fillTable();
+        });
+
+
+        // Back button
+
+        document.querySelector('#back').addEventListener('click', function() {
+            show();
+            for(i = 1; i < 4; i++) {
+            document.querySelector('.event-' + i).textContent = ""; 
+            }
+            document.querySelector(".cell-input").textContent = "";
+            document.querySelector(".errors").textContent = "";
+            arrVal = [false, false, false];
+            clearTable();
+            fillTable();
+        });
+        
+
+
+        //- // Remove button
+
+        //- document.querySelector('.remove-1').addEventListener('click', function() {   
+        //-     removeButton(1);
+        //-     arrVal[0] = false;
+        //- });
+        //- document.querySelector('.remove-2').addEventListener('click', function() {
+        //-     removeButton(2);   
+        //-     arrVal[1] = false;
+        //- });
+        //- document.querySelector('.remove-3').addEventListener('click', function() {
+        //-     removeButton(3);
+        //-     arrVal[2] = false;
+        //- });
+
+        //- function removeButton(e){
+        //-     document.querySelector('.errors').textContent = "";
+        //-     document.querySelector('.event-' + e).textContent = "";
+        //-     arrVal[e - 1] = false;
+        //-     for (var i = 0; i < newEvent.length; i++){
+
+        //-         console.log(newEvent[i]);  
+                
+        //-         if (newEvent[i].validation == info + " " + month + " " + year){
+        //-             i += e - 1;
+        //-             newEvent.splice(i,1);
+        //-             eventNumber--;
+        //-             console.log(newEvent[i]); 
+        //-             break;
+        //-         }
+        //-     }
+        //-     document.querySelector('.event-3').textContent = "";
+        //-     document.querySelector('.event-2').textContent = "";
+        //-     displayEvent();
+            
+        //- }
+
+
+        //- // Add event button
+
+        //- document.querySelector('.add').addEventListener('click', function() {   
+        //-     addEvent();
+        //-     document.querySelector('#add-event').value = "";
+        //- });
+
+        //- //Adding by enter 
+
+        //- document.getElementById("add-event")
+        //-     .addEventListener("keyup", function(event) {
+        //-     event.preventDefault();
+        //-     if (event.keyCode == 13) {
+        //-         document.querySelector('.add').click();
+        //-     }
+        //- });
+
+
+
+
+        // Day on click
+
+
+        for (var i = 0; i < table.rows.length; i++) {
+            for (var j = 0; j < table.rows[i].cells.length; j++)
+            
+            table.rows[i].cells[j].onclick = function () {
+                
+                info = this.innerHTML;  
+                
+                hide();
+                document.querySelector('#top').textContent = info + " " + monthNames[month] + " " + year;      
+                document.querySelector('.add').style.color = monthColor[month];
+                document.querySelector('#add-event').style.outlineColor = monthColor[month];
+                displayEvent();
+            };
+        }
+
+
+
+
+
+        // Add Event
+
+        function addEvent(){
+                
+            for(var k = 0; k < 3; k++){
+                        
+                if (arrVal[0] == true && arrVal[1] == true && arrVal[2] == true){
+                    document.querySelector('.errors').textContent = "* Too much events"; 
+                }
+                
+                else if (document.querySelector('#add-event').value != "" && arrVal[k] != true ) {
+                    var text = document.querySelector('#add-event').innerHTML; 
+                    newEvent[eventNumber] = new eventAdd(info, month, year, text);
+                    arrVal[k] = true;
+                    eventNumber++; 
+                    displayEvent();       
+                    break;      
+                } 
+            }
+        }
+            
+
+
+        // Object for events
+
+        function eventAdd(info, month, year, event) {
+            this.cell = info;
+            this.month = month;
+            this.year = year;
+            this.event = document.querySelector('#add-event').value;
+            this.validation = info + " " + month + " " + year;
+        }
+
+
+        // Display event in his cell
+
+        function displayEvent() {
+        
+            // Loop checking all objects
+            for (var i = 0; i < newEvent.length; i++){
+                
+                // Filling process
+                for (j = 1; j < 4; j++) { 
+                    
+                    // If event exist
+                    if (typeof newEvent[i] != "undefined") {
+                        
+                        // Validation                
+                        if (newEvent[i].validation === info + " " + month + " " + year) {    
+                            
+                            // If event list empty
+                            if (document.querySelector(".event-" + j).innerHTML == "") {
+                                
+                                document.querySelector(".event-" + j).textContent = newEvent[i].event; 
+                                arrVal[j-1] = true;
+                                i++;   
+                            }
+                            else {
+                                i++;
+                            }
+                        }
+                        else {
+                            i++;
+                            j--;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Hide and show content
+
+        function hide(){
+            document.querySelector("#table-container").style.display = "none";
+            document.querySelector("#reset").style.display = "none";
+            document.querySelector("#previous").style.display = "none";
+            document.querySelector("#next").style.display = "none";
+            document.querySelector("#cell-container").style.display = "block";
+            document.querySelector("#back").style.display = "block";
+            document.querySelector("#add-event").value = "";
+            
+            // Back button color
+            
+            document.querySelector('.back').style.color = monthColor[month];
+        }
+        function show(){
+            fillTable();
+            document.querySelector("#table-container").style.display = "block";
+            document.querySelector("#reset").style.display = "block";
+            document.querySelector("#previous").style.display = "block";
+            document.querySelector("#next").style.display = "block";
+            document.querySelector("#cell-container").style.display = "none"; 
+            document.querySelector("#back").style.display = "none";
+        }
+

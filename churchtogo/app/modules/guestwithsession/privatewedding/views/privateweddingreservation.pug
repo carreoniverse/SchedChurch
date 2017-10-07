@@ -1,0 +1,315 @@
+extends ../../../../templates/mainwithsession
+
+block content
+    h1 yow privateextends ../../../../templates/main.pug
+block content
+    
+    <link rel="stylesheet" href="/styles/weddingform.css">
+    <div class="container">
+    <div class="jumbotron">
+    <form class="form-horizontal" method='post' action='privatewedding'>
+        <fieldset>
+            input(type="hidden" name="guestid" value=`${user.int_guestid}`)
+            <legend> BRIDE's FORM </legend>
+            <div class="form-group" >
+            <label for="inputName" class="col-lg-2 control-label">Last Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="bridelastname" class="form-control" placeholder="Last name">
+            </div>
+            </div>
+            <div class="form-group" >
+            <label for="inputName" class="col-lg-2 control-label">First Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="bridefirstname" class="form-control" placeholder="First name">
+            </div>
+            </div>
+            <div class="form-group" >
+            <label for="inputName" class="col-lg-2 control-label">Middle Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="bridemiddlename" class="form-control" placeholder="Middle name">
+            </div>
+            </div>
+            <div class="form-group">
+            <label for="inputDate" class="col-lg-2 control-label">Birth-date:</label>
+            <div class="col-lg-10">
+                <input type="date" name="bridebirthday" class="form-control" placeholder="Enter birthday">
+            </div>
+            </div>
+            <div class="form-group">
+            <label for="inputAddress" class="col-lg-2 control-label">Address:</label>
+            <div class="col-lg-10">
+                <input type="text" name="brideaddress" class="form-control" placeholder="Enter address">
+            </div>
+            </div>
+            <div class="form-group">
+            <label for="inputOccupation" class="col-lg-2 control-label">Occupation:</label>
+            <div class="col-lg-10">
+                <input type="string" name="brideoccupation" class="form-control" placeholder="Enter occupation">
+            </div>
+            </div>
+            <div class="form-group">
+            <label for="select" class="col-lg-2 control-label">Civil Status:</label>
+            <div class="col-lg-10">
+                <select name="bridestatus">
+                    <option value="01">Single</option>
+                    <option value="02">In a Relationship</option>
+                    <option value="03">Engaged</option>
+                    <option value="04">Divorced</option>
+                    <option value="05">Widowed</option>
+                    <option value="06">Married</option>
+                </select>
+            </div>
+            </div>
+            <p>Bride's Father
+            <div class="form-group" >
+            <label for="inputName" class="col-lg-2 control-label">Last Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="bridefatherlastname" class="form-control" placeholder="Last name">
+            </div>
+            </div>
+            <div class="form-group" >
+            <label for="inputName" class="col-lg-2 control-label">First Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="bridefatherfirstname" class="form-control" placeholder="First name">
+            </div>
+            </div>
+            <div class="form-group" >
+            <label for="inputName" class="col-lg-2 control-label">Middle Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="bridefathermiddlename" class="form-control" placeholder="Middle name">
+            </div>
+            </div>
+            <p>Bride's Mother
+            <div class="form-group" >
+            <label for="inputName" class="col-lg-2 control-label">Last Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="bridemotherlastname" class="form-control" placeholder="Last name">
+            </div>
+            </div>
+            <div class="form-group" >
+            <label for="inputName" class="col-lg-2 control-label">First Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="bridemotherfirstname" class="form-control" placeholder="First name">
+            </div>
+            </div>
+            <div class="form-group" >
+            <label for="inputName" class="col-lg-2 control-label">Middle Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="bridemothermiddlename" class="form-control" placeholder="Middle name">
+            </div>
+            </div>
+            <div class="form-group">
+            <label class="col-lg-2 control-label">Are you 5 months or above pregnant?</label>
+            <div class="col-lg-10">
+                <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                    Option Yes
+                </label>
+                </div>
+                <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                    Option No
+                </label>
+                </div>
+            </div>
+            </div>
+            <div class="form-group">
+            <label class="col-lg-2 control-label">Check if you have recieve the following sacraments:</label>
+            <div class="col-lg-10">
+                <div class="checkbox">
+                        <label><input type="checkbox"> Baptismal </label>
+                </div>
+                <div class="checkbox">
+                        <label><input type="checkbox"> Confirmation </label>
+                </div>
+            </div>
+            </div>
+
+
+
+
+
+
+            <hr>
+            <legend> GROOM's FORM </legend>
+            <div class="form-group" >
+            <label for="inputName" class="col-lg-2 control-label">Last Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="groomlastname" class="form-control" placeholder="Last name">
+            </div>
+            </div>
+            <div class="form-group" >
+            <label for="inputName" class="col-lg-2 control-label">First Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="groomfirstname" class="form-control" placeholder="First name">
+            </div>
+            </div>
+            <div class="form-group" >
+            <label for="inputName" class="col-lg-2 control-label">Middle Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="groommiddlename" class="form-control" placeholder="Middle name">
+            </div>
+            </div>
+            <div class="form-group">
+            <label for="inputDate" class="col-lg-2 control-label">Birth-date:</label>
+            <div class="col-lg-10">
+                <input type="date" name="" class="form-control" placeholder="Enter birthday">
+            </div>
+            </div>
+            <div class="form-group">
+            <label for="inputAddress" class="col-lg-2 control-label">Address:</label>
+            <div class="col-lg-10">
+                <input type="text" name="" class="form-control" placeholder="Enter address">
+            </div>
+            </div>
+            <div class="form-group">
+            <label for="inputOccupation" class="col-lg-2 control-label">Occupation:</label>
+            <div class="col-lg-10">
+                <input type="string" name="" class="form-control" placeholder="Enter occupation">
+            </div>
+            </div>
+            <div class="form-group">
+            <label for="select" class="col-lg-2 control-label">Civil Status:</label>
+            <div class="col-lg-10">
+                <select>
+                    <option value="01">Single</option>
+                    <option value="02">In a Relationship</option>
+                    <option value="03">Engaged</option>
+                    <option value="04">Divorced</option>
+                    <option value="05">Widowed</option>
+                    <option value="06">Married</option>
+                </select>
+            </div>
+            </div>
+            <p>Groom's Father
+            <div class="form-group" >
+            <label for="inputName" class="col-lg-2 control-label">Last Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="groomfatherlastname" class="form-control" placeholder="Last name">
+            </div>
+            </div>
+            <div class="form-group" >
+            <label for="inputName" class="col-lg-2 control-label">First Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="groomfatherfirstname" class="form-control" placeholder="First name">
+            </div>
+            </div>
+            <div class="form-group" >
+            <label for="inputName" class="col-lg-2 control-label">Middle Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="groomfathermiddlename" class="form-control" placeholder="Middle name">
+            </div>
+            </div>
+            <p>Groom's Mother
+            <div class="form-group" >
+            <label for="inputName" class="col-lg-2 control-label">Last Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="groommotherlastname" class="form-control" placeholder="Last name">
+            </div>
+            </div>
+            <div class="form-group" >
+            <label for="inputName" class="col-lg-2 control-label">First Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="groommotherfirstname" class="form-control" placeholder="First name">
+            </div>
+            </div>
+            <div class="form-group" >
+            <label for="inputName" class="col-lg-2 control-label">Middle Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="groommothermiddlename" class="form-control" placeholder="Middle name">
+            </div>
+            </div>
+            <div class="form-group">
+            <label class="col-lg-2 control-label">Check if you have recieve the following sacraments:</label>
+            <div class="col-lg-10">
+                <div class="checkbox">
+                        <label><input type="checkbox"> Baptismal </label>
+                </div>
+                <div class="checkbox">
+                        <label><input type="checkbox"> Confirmation </label>
+                </div>
+            </div>
+            </div>
+            <hr>
+            <p>For the couple
+            <div class="form-group">
+            <label class="col-lg-2 control-label">Check if you were married before and want to renew your vows:</label>
+            <div class="col-lg-10">
+                <div class="checkbox">
+                        <label><input type="checkbox"> Church Married </label>
+                </div>
+                <div class="checkbox">
+                        <label><input type="checkbox"> Civilly Married </label>
+                </div>
+            </div>
+            </div>
+            //- <ul class="pager">
+            //-     <li><a href="/guest/masswedding/listofsponsors">Next</a></li>
+            //- </ul>
+            <div class="form-group">
+            <label for="inputDate" class="col-lg-2 control-label">Desired date:</label>
+            <div class="col-lg-10">
+                <input type="date" name="weddingdate" class="form-control" placeholder="Enter desired">
+            </div>
+            </div>
+
+            <legend> LIST OF SPONSORS </legend>
+            <div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">Ninong Last name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="ninonglastname" class="form-control" placeholder="Enter name">
+            </div>
+            </div>
+            <div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">Ninong First name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="ninongfirstname" class="form-control" placeholder="Enter name">
+            </div>
+            </div>
+            <div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">Ninong middle name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="ninongmiddlename" class="form-control" placeholder="Enter name">
+            </div>
+            </div><div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">ninang Last name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="ninanglastname" class="form-control" placeholder="Enter name">
+            </div>
+            </div>
+            <div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">ninang First name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="ninangfirstname" class="form-control" placeholder="Enter name">
+            </div>
+            </div>
+            <div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">ninang middle name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="ninangmiddlename" class="form-control" placeholder="Enter name">
+            </div>
+            </div>
+
+            <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="reset" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            </div>
+        </fieldset>
+    </form>
+    </div>
+    </div>
+    <div class="footer">
+        <p> FOLLOW US ON SOCIAL MEDIA </p>
+        <i class="fa fa-facebook fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-twitter fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-instagram fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-youtube fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-pinterest fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-linkedin fa-2x cust" aria-hidden="true"></i>
+        <hr size="20">
+        <f2> https://churchtogo.io </f2>
+    </div>

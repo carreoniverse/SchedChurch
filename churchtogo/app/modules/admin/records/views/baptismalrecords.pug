@@ -1,0 +1,40 @@
+extends ../../../../templates/secret.pug
+
+block content
+
+    <link rel="stylesheet" href="/styles/annointmentrecords.css">
+
+    <div class="container">
+    <div class="jumbotron">
+    <legend> BAPTISMAL RECORDS </legend>
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+            <th></th>
+            <th>RESERVATION ID</th>
+            <th>RESERVED BY</th>
+            <th>DATE OF EVENT</th>
+            </tr>
+        </thead>
+        <tbody>
+            each event in tbl_event
+                <tr>
+                <th></th>
+                td=event.int_eventid
+                td=event.varchar_firstname, event.varchar_middlename, event.varchar_lastname
+                td=event.date_schedule
+                </tr>
+    </table>
+    </div>
+    </div>
+    <div class="footer">
+        <p> FOLLOW US ON SOCIAL MEDIA </p>
+        <i class="fa fa-facebook fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-twitter fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-instagram fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-youtube fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-google fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-linkedin fa-2x cust" aria-hidden="true"></i>
+        <hr size="20">
+        <f2> https://churchtogo.io </f2>
+    </div>

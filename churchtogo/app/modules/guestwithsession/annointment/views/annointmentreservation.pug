@@ -1,0 +1,93 @@
+extends ../../../../templates/mainwithsession
+block content
+
+    <link rel="stylesheet" href="/styles/guestform.css">
+    <div class="container">
+    <div class="jumbotron">
+    <form class="form-horizontal" method='post' action='annointment'>
+        input(type="hidden" name="annointid" value=`${user.int_guestid}`)
+        <fieldset>
+            <legend> ANNOINTMENT FORM </legend>
+            <div class="form-group" >
+            <label for="select" class="col-lg-2 control-label">Sicked Relation:</label>
+            <div class="col-lg-10">
+                <select class="form-control" name="annointrelationship">
+                    <option value="Parent">Parent</option>
+                    <option value="Spouse">Spouse</option>
+                    <option value="Sibling">Sibling</option>
+                    <option value="Boyfriend/Girlfriend">Boyfriend/Girlfriend</option>
+                    <option value="Aunt/Uncle">Aunt/Uncle</option>
+                    <option value="Cousin">Cousin</option>
+                    <option value="Grandchild07">Grandchild</option>
+                    <option value="Neice/Nephew">Neice/Nephew</option>
+                    <option value="Friend">Friend</option>
+                    <option value="Grand Parent">Grand Parent</option>
+                </select>
+            </div>
+            </div>
+
+            <div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">Sick's Last Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="annointlastname" class="form-control" placeholder="Last name">
+            </div>
+            </div>
+
+            <div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">Sick's First Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="annointfirstname" class="form-control" placeholder="First name">
+            </div>
+            </div>
+
+
+            <div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">Sick's Middle Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="annointmiddlename" class="form-control" placeholder="Middle name">
+            </div>
+            </div>
+
+
+            <div class="form-group">
+            <label for="inputAddress" class="col-lg-2 control-label">Address</label>
+            <div class="col-lg-10">
+                <input type="string" name="annointaddress" class="form-control" placeholder="Enter your address">
+            </div>
+            </div>
+
+            <div class="form-group">
+            <label for="inputBirthday" class="col-lg-2 control-label">Birth-date:</label>
+            <div class="col-lg-10">
+                <input type="date" name="annointbirthday" class="form-control" placeholder="Birthday">
+            </div>
+            </div>
+
+            <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Desired date:</label>
+            <div class="col-lg-10">
+                <input type="date" name="annointdate" class="form-control" placeholder="">
+            </div>
+            </div>    
+            <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="reset" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            </div>
+        </fieldset>
+    </form>
+    </div>
+    </div>
+    <div class="footer">
+        <p> FOLLOW US ON SOCIAL MEDIA </p>
+        <i class="fa fa-facebook fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-twitter fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-instagram fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-youtube fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-pinterest fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-linkedin fa-2x cust" aria-hidden="true"></i>
+        <hr size="20">
+        <f2> https://churchtogo.io </f2>
+    </div>
+    </div>

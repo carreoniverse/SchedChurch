@@ -1,0 +1,65 @@
+extends ./base
+
+block body  
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+            <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+            <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+            
+            <font face="KG Broken Vessels Sketch Regular">
+            <div class="banner"></div>
+            <nav class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                    </div>
+
+                        
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href='/admin/home'><span class="glyphicon glyphicon-home" aria-hidden="true"></span> HOME</a></li>
+                        <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> 
+                        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> RESERVE AN EVENT <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/guestwithsession/annointment">ANOINTMENT</a></li>
+                            <li><a href="/guestwithsession/baptismal">BAPTISMAL</a></li>
+                            <li><a href="/guestwithsession/funeralmass">FUNERAL MASS</a></li>
+                            <li><a href="/guestwithsession/masswedding">MASS WEDDING</a></li>
+                            <li><a href="/guestwithsession/privatewedding">PRIVATE WEDDING</a></li>
+                           
+                        </ul>
+                        </li>
+                        //- <li class="dropdown">
+                        //- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">RESERVE AN EVENT<span class="caret"></span></a>
+                        //- <ul class="dropdown-menu" role="menu">
+                        //-     <a href="/guestwithsession/annointment">ANNOINTMENT</a>
+                        //-     <a href="/guestwithsession/baptismal">BAPTISMAL</a><br>                 
+                        //-     <a href="/guestwithsession/funeralmass">FUNERAL MASS</a><br>                            
+                        //-     <a href="/guestwithsession/masswedding">MASS WEDDING</a><br>
+                        //-     <a href="/guestwithsession/privatewedding">PRIVATE WEDDING</a>
+                        //- </ul>
+
+                        <li><a href="/guestwithsession/previous"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> PREVIOUS</a></li>
+                        <li><a href="/guestwithsession/calendar"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> CALENDAR</a></li>
+                        <li><a href="/guestwithsession/gallery"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> GALLERY</a></li>
+                        <li><a href="/guestwithsession/about"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> ABOUT US</a></li>
+
+                    </ul>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/guestwithsession/profile"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> PROFILE</a></li>
+                        <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> LOG-OUT</a></li>
+                    </ul>
+                    </div>
+                </div>
+            </nav>
+            </font>
+
+            div.container
+            block content

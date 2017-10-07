@@ -1,0 +1,224 @@
+extends ../../../../templates/mainwithsession
+
+block content
+
+    <link rel="stylesheet" href="/styles/baptismalwithsession.css">
+    <div class="container">
+    <div class="jumbotron">
+    <form class="form-horizontal" method='post' action='baptismal' >
+        <fieldset>
+            input(type="hidden" name="guestid" value=`${user.int_guestid}`)
+            <legend> BAPTISMAL FORM </legend>
+            <div class="form-group" >
+            <label for="select" class="col-lg-2 control-label">Relation:</label>
+            <div class="col-lg-10">
+                <select name="baptismalrelationship">
+                    <option value="Parent">Parent</option>
+                    <option value="Spouse">Spouse</option>
+                    <option value="Sibling">Sibling</option>
+                    <option value="Boyfriend/Girlfriend">Boyfriend/Girlfriend</option>
+                    <option value="Aunt/Uncle">Aunt/Uncle</option>
+                    <option value="Cousin">Cousin</option>
+                    <option value="Grandchild07">Grandchild</option>
+                    <option value="Neice/Nephew">Neice/Nephew</option>
+                    <option value="Friend">Friend</option>
+                    <option value="Grand Parent">Grand Parent</option>
+                </select>
+            </div>
+            </div>
+
+            <div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">Child's Last Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="childlastname" class="form-control" placeholder="Last name">
+            </div>
+            </div>
+            
+            <div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">Child's First Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="childfirstname" class="form-control" placeholder="First name">
+            </div>
+            </div>
+            
+            <div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">Child's Middle Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="childmiddlename" class="form-control" placeholder="Middle name">
+            </div>
+            </div>
+
+            <div class="form-group">
+            <label for="inputDate" class="col-lg-2 control-label">Birth-date:</label>
+            <div class="col-lg-10">
+                <input type="date" name="childbirthday" class="form-control" placeholder="Enter birthday">
+            </div>
+            </div>
+            <div class="form-group">
+            <label for="inputAddress" class="col-lg-2 control-label">Child's Birthplace</label>
+            <div class="col-lg-10">
+                <input type="string" name="childbirthplace" class="form-control" placeholder="Enter your Child's Birth Place">
+            </div>
+            </div>
+
+            <div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">Mother's Last Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="motherlastname" class="form-control" placeholder="Last name">
+            </div>
+            </div>
+            
+            <div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">Mother's First Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="motherfirstname" class="form-control" placeholder="First name">
+            </div>
+            </div>
+            
+            <div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">Mother's Middle Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="mothermiddlename" class="form-control" placeholder="Middle name">
+            </div>
+            </div>
+            <div class="form-group">
+            <label for="inputPlace" class="col-lg-2 control-label">Mother's Birthplace:</label>
+            <div class="col-lg-10">
+                <input type="string" name="motherbirthplace" class="form-control" placeholder="Enter mother's birth-place">
+            </div>
+            </div>
+            
+            <div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">Father's Last Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="fatherlastname" class="form-control" placeholder="Last name">
+            </div>
+            </div>
+            
+            <div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">Father's First Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="fatherfirstname" class="form-control" placeholder="First name">
+            </div>
+            </div>
+            
+            <div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">Father's Middle Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="fathermiddlename" class="form-control" placeholder="Middle name">
+            </div>
+            </div><div class="form-group">
+            <label for="inputPlace" class="col-lg-2 control-label">Father's Birthplace:</label>
+            <div class="col-lg-10">
+                <input type="string" name="fatherbirthplace" class="form-control" placeholder="Enter father's birthplace">
+            </div>
+            </div>
+            <div class="form-group">
+            <label for="inputPlace" class="col-lg-2 control-label">Place of Marriage:</label>
+            <div class="col-lg-10">
+                <input type="string" name="placeofmarriage" class="form-control" placeholder="Enter marriage's place">
+                <label> (Please indicate the church/municipality) </label> 
+            </div>
+            </div>
+            <div class="form-group">
+            //- <label class="col-lg-2 control-label">Married at:</label>
+            //- <div class="col-lg-10">
+            //-     <div class="checkbox">
+            //-             <label><input type="checkbox" name="baptismalmarried1"> Roman Church </label>
+            //-     </div>
+            //-     <div class="checkbox">
+            //-             <label><input type="checkbox" name="baptismalmarried2"> Civil Church </label>
+            //-     </div>
+            //-     <div class="checkbox">
+            //-             <label><input type="checkbox" name="baptismalmarried3"> Aglipayan Church </label>
+            //-     </div>
+            //-     <div class="checkbox">
+            //-             <label><input type="checkbox"> Others </label>
+            //-     </label>
+            //-     </div>
+            //- </div>
+            //- </div>
+            <div class="form-group">
+            <label for="inputAddress" class="col-lg-2 control-label">Family's Address:</label>
+            <div class="col-lg-10">
+                <input type="string" name="familyaddress" class="form-control" placeholder="Enter address">
+            </div>
+            </div>
+            <div class="form-group">
+            <label for="inputContact" class="col-lg-2 control-label">Contact #:</label>
+            <div class="col-lg-10">
+                <input type="text" name="familycontact" class="form-control" placeholder="Enter contact number">
+            </div>
+            </div>
+            
+            <div class="form-group">
+            <label for="inputDate" class="col-lg-2 control-label">Desired date:</label>
+            <div class="col-lg-10">
+                <input type="date" name="baptismaldate" class="form-control" placeholder="Enter desired">
+            </div>
+            </div>
+
+            <legend> LIST OF SPONSORS </legend>
+            <div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">Ninong Last name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="ninonglastname" class="form-control" placeholder="Enter name">
+            </div>
+            </div>
+            <div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">Ninong First name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="ninongfirstname" class="form-control" placeholder="Enter name">
+            </div>
+            </div>
+            <div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">Ninong middle name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="ninongmiddlename" class="form-control" placeholder="Enter name">
+            </div>
+            </div><div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">ninang Last name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="ninanglastname" class="form-control" placeholder="Enter name">
+            </div>
+            </div>
+            <div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">ninang First name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="ninangfirstname" class="form-control" placeholder="Enter name">
+            </div>
+            </div>
+            <div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">ninang middle name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="ninangmiddlename" class="form-control" placeholder="Enter name">
+            </div>
+            </div>
+            <div class="form-group">
+            <div class="col-lg-10">
+                <div class="checkbox">
+                    <label><input type="checkbox"> I hereby cerify that all of the above information are true and correct the best of my knowledge. </label>
+                </div>
+            </div>
+            </div>
+            <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="reset" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            </div>
+        </fieldset>
+    </form>
+    </div>
+    </div>
+    <div class="footer">
+        <p> FOLLOW US ON SOCIAL MEDIA </p>
+        <i class="fa fa-facebook fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-twitter fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-instagram fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-youtube fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-pinterest fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-linkedin fa-2x cust" aria-hidden="true"></i>
+        <hr size="20">
+        <f2> https://churchtogo.io </f2>
+    </div>

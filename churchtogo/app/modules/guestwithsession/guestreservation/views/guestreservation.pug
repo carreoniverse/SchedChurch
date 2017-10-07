@@ -1,0 +1,100 @@
+extends ../../../../templates/mainwithsession
+
+block content
+
+    <link rel="stylesheet" href="/styles/guestform.css">
+    <div class="container">
+    <div class="jumbotron">
+    <form class="form-horizontal">
+        <form method='post' action='guestreservation'>
+        <fieldset>
+            <legend> GUEST FORM </legend>
+            <div class="form-group">
+            <label for="inputName" class="col-lg-2 control-label">Name:</label>
+            <div class="col-lg-10">
+                <input type="text" name="guestname" class="form-control" placeholder="Enter your name">
+            </div>
+            </div>
+            <div class="form-group">
+            <label for="inputAddress" class="col-lg-2 control-label">Address:</label>
+            <div class="col-lg-10">
+                <input type="string" name="guestaddress" class="form-control" placeholder="Enter your address">
+            </div>
+            </div>
+            <div class="form-group">
+            <label for="inputContact" class="col-lg-2 control-label">Contact Number:</label>
+            <div class="col-lg-10">
+                <input type="number" name="guestcontact" class="form-control" placeholder="Enter your contact number">
+            </div>
+            </div>
+            <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">E-mail Address:</label>
+            <div class="col-lg-10">
+                <input type="string" name="guestemail" class="form-control" placeholder="Enter your e-mail addess">
+            </div>
+            </div>    
+            <div class="form-group">
+            <label for="select" class="col-lg-2 control-label">Event Type:</label>
+            <div class="col-lg-10">
+                <select name="guest_event">
+                    <option value="Private Wedding">Private Wedding</option>
+                    <option value="Mass Wedding">Mass Wedding</option>
+                    <option value="Annointment">Annointment</option>
+                    <option value="Baptismal">Baptismal</option>
+                    <option value="Confirmation">Confirmation</option>
+                    <option value="Funeral">Funeral</option>
+                </select>
+            
+            </div>
+            </div>
+            <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="reset" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            </div>
+        </fieldset>
+    </form>
+    </div>
+    </div>
+    <div class="footer">
+        <p> FOLLOW US ON SOCIAL MEDIA </p>
+        <i class="fa fa-facebook fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-twitter fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-instagram fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-youtube fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-pinterest fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-linkedin fa-2x cust" aria-hidden="true"></i>
+        <hr size="20">
+        <f2> https://churchtogo.io </f2>
+    </div>
+
+
+    
+    //-         <div class="form-input">
+    //-             <form method='post' action='guestreservation'>
+    //-             <h1>GUEST</h1>
+    //-             <h2>Name:</h2>
+    //-             <input type="text" name="guestname" value="" placeholder="Enter your Name"><br />
+    //-             <h3>Address:</h3>
+    //-             <input type="string" name="guestcontact" value="" placeholder="Enter your Address"><br />
+    //-             <h4>Contact:</h4>
+    //-             <input type="number" name="guestcontact" value="" placeholder="Enter your Contact Number"><br />
+    //-             <h5>E-mail:</h5>
+    //-             <input type="email" name="guestemail" value="" placeholder="Enter your Email Address"><br />
+    //-             <h6>Event:</h6>
+                
+    //-             <select name="guest_event">
+                        <option name="event">Select ---</option>
+                        <option value="Private Wedding">Private Wedding</option>
+                        <option value="Mass Wedding">Mass Wedding</option>
+                        <option value="Annointment">Annointment</option>
+                        <option value="Baptismal">Baptismal</option>
+                        <option value="Confirmation">Confirmation</option>
+                        <option value="Funeral">Funeral</option
+    //-             </select>
+    //-             <input type="submit" value="SUBMIT">
+    //-        <div class="container">     <a href="/guest/home"><button(type="submit")>CANCEL</button></a>
+    //-             </form>
+    //-         </div>
+    //- </div>

@@ -1,0 +1,315 @@
+/* List of categories: */
+
+/* 1. Body */
+/* 2. Containers */
+/* 3. Current Date Panel */
+/* 4. Calendar Day Names Table */
+/* 5. Calendar Dates Table */
+/* 6. Buttons */
+/* 7. Event List */
+/* 8. Input Add Event */
+
+
+/*-- 1. Body --*/
+
+body {
+    font-family: Verdana, sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#background {
+    display: flex;
+    position: absolute;
+    left: 0px;
+    top:0px;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    background-size: cover;
+    justify-content: center;
+}
+
+
+
+table {
+    border-spacing: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 40px;
+}
+
+
+/*-- 2. Containers --*/
+
+#container {  
+    width:450px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-left: -100px;
+    position: absolute;
+    bottom: 30px;
+}
+
+#cell-container {
+    width:100%;
+    padding-left: 10px;
+    display: none;
+}
+
+
+
+/*-- 3. Current Date Panel --*/
+
+#panel {
+    display:inline-block;
+    width:100%;
+    height:70px;
+    margin-bottom:-5px;
+    position: relative;
+    white-space: nowrap;
+    margin-left: -20px;
+}
+
+#previous, #top, #next {
+    height:100%;
+    float:left;
+    text-align:center;
+    line-height:20px;
+    vertical-align:middle;
+    color:black;
+}
+
+#previous, #next {
+    cursor:pointer;
+    font-weight:200;
+    font-size:20px;
+    position: absolute;
+    background-color: transparent;
+    border: 0px;
+    outline: none;
+    top: 150px;
+}
+
+#next {
+    right: 30px;    
+}
+
+#previous{
+    left: 40px;   
+}
+
+#previous:hover, #next:hover {
+    font-weight:300;
+}
+
+#top {
+    font-size:95px;
+    cursor : default;
+    width:100%;  
+    font-family: 'Tangerine', cursive;
+}
+
+
+
+/*-- 4. Calendar Day Names Table --*/
+
+.calendar-days {
+    width:310px;
+    padding-left: 0px;
+    font-weight: 700;
+}
+
+.calendar-days tr td {
+    font-size:26px;
+    text-align:center;
+    line-height:40px;
+    border:none;
+    width:40px;
+    height:40px;
+    cursor : default;
+}
+
+
+
+/*-- 5. Calendar Dates Table --*/
+
+td {
+    width:40px;
+    height:40px;
+    text-align:center;
+    vertical-align: center;
+    font-size:22px;
+    margin:0;
+    padding:0;
+    color:#686868;
+    position: relative;
+    cursor: pointer;
+}
+
+td:hover {
+    font-size: 25px;
+}
+
+tr:last-child td:empty {
+    visibility: hidden;
+    height: 0;
+}
+td:not(:empty) ~ td:empty {
+    visibility: visible;
+    height: 100%;
+}
+
+
+
+/*-- 6. Buttons --*/
+
+button {
+    outline: none; 
+    text-align: center;  
+    cursor: pointer;
+    background-color: transparent;
+    border: 0px;
+}
+
+
+i {
+    color: #212A30;
+    display: inline-block;
+    font-size: 41px;
+    line-height: 1;
+    vertical-align: text-top;
+    transition: margin 0.3s;
+    cursor: pointer;
+}
+
+i:hover {
+    opacity: 0.9;
+}
+
+#reset {
+    color: #686868;
+    width:80px;
+    line-height: 20px;
+    font-size: 14px;
+    margin-left: 175px;
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+#reset:hover {
+    text-decoration: underline;
+}
+
+
+#add {
+    top: 35px;
+    width: 10%;
+    height: 40px;
+    margin-left: 10px;
+    position: absolute;
+}
+#add i {
+    font-size: 56px;
+}
+
+
+#back {
+    margin-left: 190px;
+    cursor: pointer;
+    display: none;
+}
+#back i {
+    font-size: 46px;   
+    margin-right: 10px;
+}
+
+
+.remove {
+    margin-right: 10px;    
+}
+.remove, .repeat {
+    width:8%;
+    float:right; 
+}
+
+.remove i, .repeat:hover {
+    font-size:24px;
+}
+.remove i:hover, .repeat:hover {
+    opacity: 1;
+    font-size: 25px;
+    transition: all 1.3s ease-in-out;
+}
+
+
+
+
+/*-- 7. Event List --*/
+
+.event-title {
+    font-size:26px;
+    margin-top: 4px;
+    margin-bottom: 6px;
+}
+
+.event {
+    border-bottom: 1px solid rgba(68,68,68,0.2);
+    height: 30px;
+    font-size: 20px;
+    padding-left: 15px;
+}
+
+.event:first-child {
+    margin-top: 0px;
+}
+
+.list {
+    width: 92%;
+    margin-right: 0px;
+}
+
+
+
+/*-- 8. Input Add Event --*/
+
+.cell-input {
+    height:35px;
+    border:3px solid #ddd;
+    border-radius: 3px;
+    padding-left: 10px;
+    font-size:18px;
+    width:73%; 
+    margin-right: 2px;
+    margin-bottom: 10px;
+    color: #686868;
+    outline-color: #686868;
+}
+
+#new-event {
+    position: relative;
+}
+
+
+
+/*-- 9. Errors and markers --*/
+
+.errors {
+    color:red;
+    font-weight: 700;
+    font-size:16px;
+}
+
+.red {
+    color: red;
+    font-weight: 800;
+}
+
+.dot:before { 
+    content: "•"; 
+    position:absolute;
+    right:3px;
+    bottom:-6px;
+    color:red;
+}

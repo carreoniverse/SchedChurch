@@ -1,0 +1,61 @@
+extends ../../../../templates/mainwithsession.pug
+
+block content
+
+
+    <link rel="stylesheet" href="/styles/profile.css">
+    <div class="container">
+    <div class="jumbotron">
+        <h1>
+            value= "@"
+            value=`${user.varchar_username}`
+        </h1><br><br><br><br><br>
+        <label> Name:</label><br><br>
+        <label>
+            value=`${user.varchar_lastname}`
+            value= ", "
+            value=  `${user.varchar_firstname}`
+            value= " "
+            value= `${user.varchar_middlename}`
+        </label><br><br>
+        <label> Gender:</label><br><br>
+        <label>
+            value=`${user.char_gender}`
+        </label><br><br>
+        <label> Address:</label><br><br>
+        <label>
+            value=`${user.varchar_guestaddress}`
+        </label><br><br>
+        <label> Birthday:</label><br><br>
+        <label>
+            value=`${user.date_guestbirthday}`
+        </label><br><br>
+        <label> Contact Number:</label><br><br>
+        <label>
+            value=`${user.varchar_guestcontactnumber}`
+        </label><br><br>
+        <label> Email:</label><br><br>    
+        <label>
+            value=`${user.varchar_guestemail}`
+        </label><br><br>
+    </div>
+    </div>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <a href='/guestwithsession/profile/editprofile'><button type="submit" class="btn btn-primary">EDIT</button></a>
+            </div>
+        </div>
+    </div>        
+
+    <div class="footer">
+        <p> FOLLOW US ON SOCIAL MEDIA </p>
+        <i class="fa fa-facebook fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-twitter fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-instagram fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-youtube fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-pinterest fa-2x cust" aria-hidden="true"></i>
+        <i class="fa fa-linkedin fa-2x cust" aria-hidden="true"></i>
+        <hr size="20">
+        <f2> https://churchtogo.io </f2>
+    </div>
+    </div>

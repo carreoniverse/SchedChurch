@@ -1,0 +1,94 @@
+extends ../../../../templates/mainwithsession.pug
+
+
+block content
+
+        <link rel="stylesheet" href="/styles/signup.css">
+            <div class="container">
+            <div class="jumbotron">
+            <form class="form-horizontal" method="post" action= 'editprofile'>
+            <fieldset>
+                input(type="hidden" name="guestid" value=`${user.int_guestid}`)
+                <legend><img src="/assets/pics/guesticon.png">EDIT PROFILE </legend>
+                <div class="form-group">
+                <label for="inputName" class="col-lg-2 control-label">Last Name:</label>
+                <div class="col-lg-10">
+                    input(type="text" name="lastname" class="form-control" value=`${user.varchar_lastname}`)
+                </div>
+                </div>
+                <div class="form-group">
+                <label for="inputName" class="col-lg-2 control-label">First Name:</label>
+                <div class="col-lg-10">
+                    input(type="text" name="firstname" class="form-control" value=`${user.varchar_firstname}`)
+                </div>
+                </div>
+                <div class="form-group">
+                <label for="inputName" class="col-lg-2 control-label">Middle Name:</label>
+                <div class="col-lg-10">
+                    input(type="text" name="middlename" class="form-control" value=`${user.varchar_middlename}`)
+                </div>
+                </div>
+                <div class="form-group">
+                <label for="inputGender" class="col-lg-2 control-label">Gender:</label>
+                <div class="col-lg-10">
+                    input(type="text" name="gender" class="form-control" value=`${user.char_gender}`)
+                </div>
+                </div>
+                <div class="form-group">
+                <label for="inputBirthday" class="col-lg-2 control-label">Birthday:</label>
+                <div class="col-lg-10">
+                     input(type="date" name="birthday" class="form-control" value=`${user.date_guestbirthday}`)
+                </div>
+                </div>
+                <div class="form-group">
+                <label for="inputAddress" class="col-lg-2 control-label">Address:</label>
+                <div class="col-lg-10">
+                    input(type="text" name="address" class="form-control" value=`${user.varchar_guestaddress}`)
+                </div>
+                </div> 
+                <div class="form-group">
+                <label for="inputContact" class="col-lg-2 control-label">Contact No:</label>
+                <div class="col-lg-10">
+                    input(type="text" name="contactnumber" class="form-control" value=`${user.varchar_guestcontactnumber}`)
+                </div>
+                </div>
+            
+                <div class="form-group">
+                <label for="inputE-mail" class="col-lg-2 control-label">E-mail Address:</label>
+                <div class="col-lg-10">
+                    input(type="text" name="email" class="form-control" value=`${user.varchar_guestemail}`)
+                </div>
+                </div>
+                <div class="form-group">
+                <label for="inputName" class="col-lg-2 control-label">Username:</label>
+                <div class="col-lg-10">
+                    input(type="text" name="username" class="form-control" value=`${user.varchar_username}`)
+                </div>
+                </div>
+                <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Password:</label>
+                <div class="col-lg-10">
+                    <input type="text" name="password" class="form-control" placeholder="Enter your new password">
+                </div>
+                </div>          
+            <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+            <br>
+                <button type="reset" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-primary" >Submit</button>
+            </div>
+            </div>
+            </fieldset>
+            </form>
+    
+            <div class="footer">
+                <p> FOLLOW US ON SOCIAL MEDIA </p>
+                <i class="fa fa-facebook fa-2x cust" aria-hidden="true"></i>
+                <i class="fa fa-twitter fa-2x cust" aria-hidden="true"></i>
+                <i class="fa fa-instagram fa-2x cust" aria-hidden="true"></i>
+                <i class="fa fa-youtube fa-2x cust" aria-hidden="true"></i>
+                <i class="fa fa-google fa-2x cust" aria-hidden="true"></i>
+                <i class="fa fa-linkedin fa-2x cust" aria-hidden="true"></i>
+                <hr>
+                <f2> https://churchtogo.io </f2>
+            </div>

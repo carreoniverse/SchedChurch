@@ -1,0 +1,45 @@
+.jumbotron
+{
+    width: 100%;
+    height: 500px;
+    text-align: center;
+}
+legend
+{
+    font-family: "KG Broken Vessels Sketch Regular";
+    font-size: 40px;
+}
+a
+{
+    text-decoration: none;
+    font-family: "KG Broken Vessels Sketch Regular";
+    
+    color: #212A30;
+
+}
+.footer
+{
+    text-align: center;
+    width: 100%;
+    height: 200px;
+    font-family: "KG Broken Vessels Sketch Regular";
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.cust1
+{
+    margin-right: 30px;
+    position: relative;
+}
+.cust
+{
+    padding: 5px auto;
+    position: relative;
+    display: inline-table;
+}
+hr {
+    border: none;
+    height: 2px;
+    color: #333; 
+    background-color: #333; 
+}
